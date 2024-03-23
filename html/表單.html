@@ -4,16 +4,47 @@
 
 <h2>HTML Forms</h2>
 
-<form action="/action_page.php">
+<form action="/register.php" method="post" enctype="multipart/form-data">
   <label for="name">名字：</label><br>
-  <input type="text" id="name" name="name"><br>
+  <input type="text" id="name" name="name" required><br>
+  
   <label for="email">email：</label><br>
-  <input type="email" id="email" email="email"><br>
+  <input type="email" id="email" name="email" required><br>
+  
   <label for="date">生日：</label><br>
-  <input type="date" id="date" date="name"><br>
+  <input type="date" id="date" name="date"><br>
+  
   <label for="color">喜歡的顏色：</label><br>
-  <input type="color" id="color" color="color"><br>
-  <label for="radio">血型：</label><br>
+  <input type="color" id="color" name="color"><br>
+  
+  <label for="blood">血型：</label><br>
+  <input type="radio" id="A" name="blood" value="A">
+  <label for="A">A</label><br>
+  <input type="radio" id="B" name="blood" value="B">
+  <label for="B">B</label><br>
+  <input type="radio" id="O" name="blood" value="O">
+  <label for="O">O</label><br>
+  <input type="radio" id="AB" name="blood" value="AB">
+  <label for="AB">AB</label><br>
+  
+  <label for="phone">電話：</label><br>
+  <input type="tel" id="phone" phone="phone" required><br>
+  
+  <label for="username">帳號：</label><br>
+  <input type="text" id="username" name="username" required><br>
+  
+  <label for="password">密碼：</label><br>
+  <input type="password" id="password" name="password" required><br>
+
+  <label for="attachment">上傳附件：</label><br>
+  <input type="file" id="attachment" name="attachment"><br>
+
+  <label for="introduction">自我介紹：</label><br>
+  <textarea id="introduction" name="introduction"></textarea><br>
+
+  <input type="submit" value="註冊">
+  
+  
   
 </form> 
 
