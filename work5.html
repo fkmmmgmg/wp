@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving Buttons</title>
+<style>
+    .button {
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+
+<button id="Button1" class="button" onclick="resizeButton()">Resize</button><br><br>
+
+<button id="Button2" class="button" onclick="moveRight()">Moving right</button><br>
+
+<button id="Button3" class="button" onclick="stopMoving()">Stop Moving</button>
+
+<script>
+
+function resizeButton() {
+    var button = document.querySelector('#Button1');
+    var currentWidth = parseFloat(window.getComputedStyle(button).width);
+    var currentHeight = parseFloat(window.getComputedStyle(button).height);
+    button.style.width = (currentWidth + 10) + 'px';
+    button.style.height = (currentHeight + 10) + 'px';
+}
+
+function moveRight() {
+    var button = document.getElementById('Button2');
+    var currentLeft = parseFloat(window.getComputedStyle(button).left);
+    button.style.left = (currentLeft + 10) + 'px'; // 每次向右移动 10px
+}
+
+var deltaX = 1; // 水平方向每次移动的距离
+var deltaY = 1; // 垂直方向每次移动的距离
+var intervalId;
+
+function moveButton() {
+    var button = document.getElementById('Button3'); // 使用 Button3 的 ID
+    var rect = button.getBoundingClientRect();
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+
+    if (rect.left <= 0 || rect.right >= windowWidth) {
+        deltaX = -deltaX; // 水平方向碰到边界，改变方向
+    }
+    if (rect.top <= 0 || rect.bottom >= windowHeight) {
+        deltaY = -deltaY; // 垂直方向碰到边界，改变方向
+    }
+
+    button.style.left = (rect.left + deltaX) + 'px'; // 更新水平位置
+    button.style.top = (rect.top + deltaY) + 'px'; // 更新垂直位置
+}
+
+function startMoving() {
+    intervalId = setInterval(moveButton, 10); // 每 10ms 移动一次，可以调整移动频率
+}
+
+function stopMoving() {
+    clearInterval(intervalId);
+}
+
+startMoving(); // 开始移动按钮
+</script>
+
+</body>
+</html>
