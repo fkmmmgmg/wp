@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: auto;
+  background: #DDA15E;
+  transition: width 2s;
+  border: 0; /* 將邊界設置為0 */
+  border-top-right-radius: 10px; /* 加10px的圓弧邊 */
+  border-bottom-right-radius: 10px; /* 加10px的圓弧邊 */
+  position: fixed; /* 將位置設置為固定 */
+  left: 0; /* 將左邊邊界設置為0 */
+  top: 120px; /* 將上邊界設置為0 */
+  bottom: 0; /* 將下邊界設置為0 */
+}
+
+div:hover {
+  width: 300px;
+}
+
+body {
+  background-color: #FEFAE0; /* 設置整個網頁的背景顏色 */
+}
+
+</style>
+</head>
+
+<body>
+<h1>The transition Property</h1>
+
+<p>Hover over the div element below, to see the transition effect:</p>
+<div></div>
+
+</body>
+</html>
