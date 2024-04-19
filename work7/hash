@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHA256 Hash Calculator</title>
+</head>
+<body>
+  <label for="inputText">輸入文本：</label>
+  <input type="text" id="inputText" onchange="calculateHash()">
+  <p id="hashResult"></p>
+
+<script>
+function sha256Hash(text) {
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(text))
+    .then(buffer => {
+        let hash = Array.prototype.map.call(new Uint8Array(buffer), x => ('00' + x.toString(16)).slice(-2)).join('');
+        return hash;
+    });
+}
+
+async function calculateHash() {
+    const inputText = document.getElementById('inputText').value;
+    const hashedText = await sha256Hash(inputText);
+    document.getElementById('hashResult').textContent = "SHA256 哈希值: " + hashedText;
+}
+</script>
+</body>
+</html>

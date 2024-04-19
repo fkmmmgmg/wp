@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<style> 
+* {
+  margin:0;
+  padding:0;
+}
+div {
+  width: 100px;
+  height: auto;
+  background: #DDA15E;
+  transition: width 2s;
+  border: 0; /* 將邊界設置為0 */
+  border-top-right-radius: 10px; /* 加10px的圓弧邊 */
+  border-bottom-right-radius: 10px; /* 加10px的圓弧邊 */
+  position: fixed; /* 將位置設置為固定 */
+  left: 0; /* 將左邊邊界設置為0 */
+  top: 120px; /* 將上邊界設置為0 */
+  bottom: 0; /* 將下邊界設置為0 */
+}
+/*
+div:hover {
+  width: 300px;
+}
+*/
+</style>
+</head>
+<body>
+
+<div id="sidebar" onclick="toggle()"></div>
+
+<script>
+let mode = 'narrow'
+let sidebar = document.querySelector('#sidebar')
+console.log('sidebar=', sidebar)
+function toggle() {
+   if (mode == 'narrow')
+   {
+      mode = 'wide'
+      sidebar.style.width = "100px"
+   } else {
+      mode = 'narrow'
+      sidebar.style.width = "20px"
+   }
+}
+
+</script>
+
+<body>
+  <h1>側欄顯示</h1>
+  
+  <p>點擊跳出:</p>
+  <div></div>
+  
+  </body>
+
+</body>
+</html>
