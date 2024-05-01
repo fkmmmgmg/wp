@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  width: 80px; /* 设置小窗格的宽度 */
+  height: 50px; /* 设置小窗格的高度 */
+  background-color: rgb(51, 186, 231);
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  border-radius: 8px;/* 添加外框 */
+  margin: 5px;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgb(146, 236, 246);
+}
+
+.profile-pic {
+  float: left;
+  width: 50px; /* 设置框的宽度 */
+  height: 50px; /* 设置框的高度 */
+  border-radius: 50%; /* 将边框设置为圆形 */
+  border: 2px solid #ccc; /* 设置边框 */
+  overflow: hidden; /* 裁剪超出边框的内容 */
+  display: flex; /* 使用 flexbox 布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  margin: 7px; /* 添加一些间距，让头像与其他链接有些距离 */
+}
+
+.profile-pic img {
+  width: 57px; /* 设置框的宽度 */
+  height: 57px;
+
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+  border: 1px solid #bdbbbb;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  width: 20px;
+  height: 100vh;
+  
+}
+
+/*@media screen and (max-width: 600px) 表示這是一個針對螢幕裝置（screen）且當螢幕寬度最大為600像素時生效的媒體查詢。
+{ .column.side, .column.middle { width: 100%; } } 意味著當符合上述媒體查詢條件時，左側和右側列（.column.side）以及中間列（.column.middle）的寬度將被設置為100％，即它們將佔據整個可用寬度，而不再是原先定義的25%和50%*/
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  	<div class="profile-pic">
+    	<img src="https://github.com/fkmmmgmg/wp/blob/master/work1/%E6%B5%B7%E7%8D%BA%402x-8.png?raw=true" alt="Profile Picture">
+    </div>
+</div>
+
+<div class="row">
+  <div class="column side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+
+  
+  <div class="column middle">
+    <h2>Main Content</h2>
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+  
+  <div class="column side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+</div>
+  
+</body>
+</html>
+
+
