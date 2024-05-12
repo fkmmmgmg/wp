@@ -1,6 +1,5 @@
 # animation
 Work09分為兩個動畫，首先解釋animation怎麼做的
-<img src="[https://github.com/fkmmmgmg/wp/assets/147649316/57bd819c-b519-4bcb-9785-b908063b74bd.jpg]" alt="示例圖片" width="200" height="150">
 
 ## HTML 部分：
   參考w3schools
@@ -11,3 +10,16 @@ Work09分為兩個動畫，首先解釋animation怎麼做的
 4. 主要繪製邏輯：計算 Desmos 函數的值是參考chapgpt，將以上公式轉換成以函數呼叫的形式，進行重複呼叫。
 5. 動畫循環：參考chapgpt和w3schools
 
+# animation2
+Work09分為兩個動畫，首先解釋animation2怎麼做的
+
+## HTML 部分：
+  參考w3schools
+## JavaScript 部分：
+1. Canvas 初始化：參考w3schools
+2. 變量定義：定義了一些全局變量參考chapgpt，理解後並進行微調重寫一遍
+3. 繪製函數：參考desmos各類作品的繪圖公式，隨便選一個使用chapgpt翻譯成JavaScript 的表現方式，理解後重打並進行微調和上註解
+4. 存取繪製路徑：參考chapgpt，並進行大幅度修改與整理
+5. 設置路徑顏色：隨意調整rgb顏色範圍調到滿意為止，並取消移動的點的顏色，設定不同透明度
+7. 主要繪製邏輯：計算 Desmos 函數的值是參考chapgpt，將以上公式轉換成以函數呼叫的形式，進行重複呼叫。
+8. 動畫循環：參考chapgpt和w3schools
