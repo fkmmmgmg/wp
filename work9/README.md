@@ -11,7 +11,7 @@ Work09分為兩個動畫，首先解釋animation怎麼做的
 5. 動畫循環：參考chapgpt和w3schools
 
 # animation2
-Work09分為兩個動畫，首先解釋animation2怎麼做的
+animation2怎麼做的
 
 ## HTML 部分：
   參考w3schools
