@@ -1,7 +1,6 @@
 # animation
 Work09分為兩個動畫，首先解釋animation怎麼做的
-![image](https://github.com/fkmmmgmg/wp/assets/147649316/57bd819c-b519-4bcb-9785-b908063b74bd){:height="50%" width="50%"}
-
+<img src="[https://github.com/fkmmmgmg/wp/assets/147649316/57bd819c-b519-4bcb-9785-b908063b74bd.jpg]" alt="示例圖片" width="200" height="150">
 
 ## HTML 部分：
   參考w3schools
