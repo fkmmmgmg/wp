@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHA256 Hash Calculator</title>
 </head>
 <body>
-  <label for="inputText">輸入文本：</label>
+    <h1>SHA-256 Hash</h1>
+    <label for="inputText">輸入文本：</label>
   <input type="text" id="inputText" onchange="calculateHash()">
   <p id="hashResult"></p>
 
 <script>
-function sha256Hash(text) {
-    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(text))
+function sha256Hash(text) { 
+    //接收一個文字參數 text，並返回一個 Promise
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)) 
+    //"SHA-256"為哈希算法名稱，並透過 new TextEncoder().encode(text) 將文字編碼為 Uint8Array
     .then(buffer => {
         let hash = Array.prototype.map.call(new Uint8Array(buffer), x => ('00' + x.toString(16)).slice(-2)).join('');
         return hash;
     });
 }
 
+//計算 SHA-256 
 async function calculateHash() {
     const inputText = document.getElementById('inputText').value;
     const hashedText = await sha256Hash(inputText);
     document.getElementById('hashResult').textContent = "SHA256 哈希值: " + hashedText;
 }
+//這段程式碼會將哈希值插入到指定的 HTML 元素中，並將該元素的內容設置為 "SHA256 哈希值: " 後跟著實際的哈希值。這樣做是為了將計算得到的哈希值以易於理解和識別的方式呈現給用戶
 </script>
 </body>
 </html>
