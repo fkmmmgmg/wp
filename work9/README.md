@@ -1,5 +1,4 @@
 # animation
-Work09分為兩個動畫，首先解釋animation怎麼做的
 ![image](https://github.com/fkmmmgmg/wp/assets/147649316/a1376273-73bd-440e-bb13-b175deec97fe)
 
 ## HTML 部分：
@@ -12,7 +11,6 @@ Work09分為兩個動畫，首先解釋animation怎麼做的
 5. 動畫循環：參考chapgpt和w3schools
 
 # animation2
-animation2怎麼做的
 ![image](https://github.com/fkmmmgmg/wp/assets/147649316/b98e649a-de75-4df5-b34f-4f1bcaa4c391)
 
 ## HTML 部分：
