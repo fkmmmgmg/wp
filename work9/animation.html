@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dynamic Circle with Desmos Function</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="700" height="700"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    let angle = 0;
+    const pointSpeed = 0.005; // 改變點的移動速度
+    const lineSpacing = 30; // 改變線條間距
+
+    function draw() {
+      // 清除畫布
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // 計算 Desmos 函數在當前時間的值
+      const r = 100 + 50 * Math.sin(3 * angle); // 半徑隨時間變化
+      const x = centerX + r * Math.cos(angle); // x 座標
+      const y = centerY + r * Math.sin(angle); // y 座標
+      
+
+    // 繪製藍色的線條直徑較長的橢圓 
+    function drawBlueLines(angle, lineSpacing, sinMultiplier, color) {
+      ctx.beginPath();
+      const startX = centerX + (100 + lineSpacing * Math.sin(sinMultiplier * angle)) * Math.cos(0);
+      const startY = centerY + (100 + lineSpacing * Math.sin(5 * angle)) * Math.sin(0);
+      ctx.moveTo(startX, startY); // 移動到起始點
+      for (let i = 0; i < 3 * Math.PI; i += 0.01) {
+        const x1 = centerX + (100 + lineSpacing * Math.sin(sinMultiplier * angle)) * Math.cos(i);
+        const y1 = centerY + (200 + lineSpacing * Math.sin(5 * angle)) * Math.sin(i);
+        ctx.lineTo(x1, y1);
+      }
+      ctx.strokeStyle = color;
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+
+  // 在適當的位置呼叫函數以繪製藍色的線條
+  drawBlueLines(angle, lineSpacing, 2,  "#0096C7");
+  drawBlueLines(angle, lineSpacing, 5,  "#00B4D8");
+  drawBlueLines(angle, lineSpacing, 10, "#48CAE4");
+  drawBlueLines(angle, lineSpacing, 1,  "#90E0EF");
+
+    // 繪製藍色的線條直徑較短的橢圓
+    function drawBlueLines2(angle, lineSpacing, sinMultiplier, color) {
+      ctx.beginPath();
+      const startX = centerX + (50 +lineSpacing * Math.sin(sinMultiplier * angle )) * Math.cos(0);
+      const startY = centerY + (50 + lineSpacing * Math.sin(5 * angle)) * Math.sin(0)*-1;
+      ctx.moveTo(startX, startY); // 移動到起始點
+      for (let i = 0; i < 2 * Math.PI; i += 0.01) {
+        const x1 = centerX + (50 + lineSpacing * Math.sin(sinMultiplier * angle)) * Math.cos(i);
+        const y1 = centerY + (100 + lineSpacing * Math.sin(3 * angle)) * Math.sin(i);
+        ctx.lineTo(x1, y1);
+      }
+      ctx.strokeStyle = color;
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+
+  drawBlueLines2(angle, lineSpacing, 2,  "#0096C7");
+  drawBlueLines2(angle, lineSpacing, 5,  "#48CAE4");
+  drawBlueLines2(angle, lineSpacing, 10, "#00B4D8");
+  drawBlueLines2(angle, lineSpacing, 1,  "#90E0EF");
+
+      
+    function drawMovingCircles(angle, radius, color) {
+      ctx.beginPath();
+      const x = centerX + radius * Math.cos(angle);
+      const y = centerY + radius * Math.sin(angle);
+      ctx.arc(x, y, 5, 0, 2 * Math.PI);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.closePath();
+    }
+    
+    
+  drawMovingCircles(angle, r, "red");
+  drawMovingCircles(angle + Math.PI / 3, r + 20, "blue");
+  drawMovingCircles(angle + Math.PI * 2 / 3, r + 40, "green");
+
+      // 更新角度以使圓形轉動
+      angle += pointSpeed;
+
+      // 每隔一小段時間重新繪製畫布，創造動畫效果
+      requestAnimationFrame(draw);
+    }
+
+    // 開始繪製動畫
+    draw();
+  </script>
+</body>
+</html>
