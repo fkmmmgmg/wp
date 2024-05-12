@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="background-color: black;">
+  <canvas id="myCanvas" width="800" height="800" ></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    let angle = 0;
+    const pointSpeed = 0.05; // 改變點的移動速度
+    const trailLength = 800; // 軌跡線長度
+    let trails = [];
+
+    // 定義繪製多個會動圓的函數
+    function drawMovingCircles(angle, radius, color) {
+      ctx.beginPath();
+      const x = centerX + radius * Math.cos(angle);
+      const y = centerY + radius * Math.sin(angle);
+      ctx.arc(x, y, 5, 0, 2 * Math.PI);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.closePath();
+      trails.push({x, y}); // 將當前位置添加到軌跡中
+      if (trails.length > trailLength) {
+        trails.shift(); // 如果軌跡太長，則刪除最早的點
+      }
+      ctx.beginPath();
+      ctx.globalAlpha = 0.2; // 設置透明度
+      ctx.moveTo(trails[0].x, trails[0].y); // 移動到軌跡的起始點
+      for (let i = 1; i < trails.length; i++) {
+        ctx.lineTo(trails[i].x, trails[i].y); // 連接軌跡的各個點
+      }
+      ctx.strokeStyle = color;
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+    function draw() {
+      // 清除畫布
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // 計算 Desmos 函數在當前時間的值
+      const r = 100 + 50 * Math.sin(3 * angle); // 半徑隨時間變化
+
+      // 繪製圓形
+      drawMovingCircles(angle, r, "rgba(255, 5, 255, 0.2)");
+      drawMovingCircles(angle + Math.PI / 4, r + 10, "rgba(0, 0, 255, 0.3)");
+      drawMovingCircles(angle + Math.PI * 2 / 3, r + 40, "rgba(0, 128, 0, 1)");
+      drawMovingCircles(angle + Math.PI * 2 , r*6 + 10, "rgba(0, 128, 255, 0.5)");
+      drawMovingCircles(angle + Math.PI * 2 , r * 3, "rgba(0, 128, 0, 0.5)");
+
+      // 更新角度以使圓形轉動
+      angle += pointSpeed;
+
+      // 每隔一小段時間重新繪製畫布，創造動畫效果
+      requestAnimationFrame(draw);
+    }
+
+    // 開始繪製動畫
+    draw();
+  </script>
+</body>
+</html>
