@@ -1,11 +1,11 @@
 # 表單
-https://fkmmmgmg.github.io/wp/work2/表單.html
+https://fkmmmgmg.github.io/wp/work2/%E8%A1%A8%E5%96%AE.html
 
 ## HTML 部分：
   參考w3schools和chatgpt，自己在調整重寫一遍
 
 # 表單CSS
-https://fkmmmgmg.github.io/wp/work2/表單CSS.html
+https://fkmmmgmg.github.io/wp/work2/%E8%A1%A8%E5%96%AECSS.html
 
 ## HTML 部分：
   參考w3schools和chatgpt，自己在調整重寫一遍
