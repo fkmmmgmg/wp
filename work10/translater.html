@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>英文到中文翻譯</title>
+    <title>英文到其他語言翻譯</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1>英文到中文翻譯</h1>
+    <h1>英文到其他語言翻譯</h1>
     <textarea id="inputText" rows="4" cols="50" placeholder="輸入英文"></textarea>
     <br>
+    <label for="languageSelect">選擇語言:</label>
+    <select id="languageSelect">
+        <option value="zh-TW">繁體中文</option>
+        <option value="es">西班牙文</option>
+        <option value="zh">簡體中文</option>
+        <option value="fr">法文</option>
+        <option value="ja">日文</option>
+        <option value="ko">韓文</option>
+    </select>
+    <br>
+    <main>
     <button id="translateButton">翻譯</button>
     <h2>翻譯結果</h2>
     <div id="outputText"></div>
+    </main>
 
     <script>
         $(document).ready(function() {
             $('#translateButton').click(function() {
                 var inputText = $('#inputText').val();
+                var targetLang = $('#languageSelect').val();
 
                 var url = "https://libretranslate.de/translate";
 
@@ -27,7 +40,7 @@
                     data: JSON.stringify({
                         q: inputText,
                         source: "en",
-                        target: "zh",
+                        target: targetLang,
                         format: "text"
                     }),
                     contentType: "application/json",
