@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文到中文翻譯</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>英文到中文翻譯</h1>
+    <textarea id="inputText" rows="4" cols="50" placeholder="輸入英文"></textarea>
+    <br>
+    <button id="translateButton">翻譯</button>
+    <h2>翻譯結果</h2>
+    <div id="outputText"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#translateButton').click(function() {
+                var inputText = $('#inputText').val();
+
+                var url = "https://libretranslate.de/translate";
+
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: JSON.stringify({
+                        q: inputText,
+                        source: "en",
+                        target: "zh",
+                        format: "text"
+                    }),
+                    contentType: "application/json",
+                    success: function(response) {
+                        $('#outputText').text(response.translatedText);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                        $('#outputText').text("翻譯失敗，請稍後再試。");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
