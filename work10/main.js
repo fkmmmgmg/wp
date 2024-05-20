@@ -29,5 +29,3 @@ async function chat() {
     let answer = await groqChat(qNode.value)
     responseNode.innerText = answer
 }
-
-}
