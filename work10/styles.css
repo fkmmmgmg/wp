@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%; /* 確保容器寬度為 100% */
-    padding-left: 20px; /* 左邊界 */
+    padding-left: 100px; /* 左邊界 */
 }
 
 h1 {
