@@ -6,7 +6,15 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* 確保容器寬度為 100% */
+    padding-left: 20px; /* 左邊界 */
 }
 
 h1 {
