@@ -7,17 +7,14 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 100%; /* 確保容器寬度為 100% */
-    padding-left: 100px; /* 左邊界 */
+    width: 95%;
+    display: block;
+    margin:10px auto;
 }
 
 h1 {
     margin-top: 20px;
+    margin: 10px auto;
 }
 
 textarea {
@@ -30,7 +27,7 @@ textarea {
 }
 
 label, select, button {
-    margin: 10px 0;
+    margin: 10px auto;
 }
 
 select {
@@ -56,6 +53,7 @@ button:hover {
 
 h2 {
     margin-top: 20px;
+    margin: 10px auto;
 }
 
 #outputText {
