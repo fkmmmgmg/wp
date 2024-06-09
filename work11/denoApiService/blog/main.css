@@ -1,6 +1,6 @@
 body {
-  padding: 80px;
-  font: 16px Helvetica, Arial;
+  padding: 80px; /*設置元素的內邊距（padding）為 80 像素。內邊距是指元素內容與其邊框之間的空間*/
+  font: 16px Helvetica, Arial; /*這行代碼會對元素的四個方向（上、右、下、左）都應用 80 像素的內邊距*/
 }
 
 h1 {
@@ -17,11 +17,13 @@ h2 {
 }
 
 #posts li {
-  margin: 40px 0;
-  padding: 0;
-  padding-bottom: 20px;
+  margin: 40px 0; /*為列表項設置了外邊距，具體是上下各 40 像素，左右為 0 像素*/
+  padding: 0; /*為列表項設置了內邊距，具體是所有方向（上、右、下、左）均為 0 像素*/
+  padding-bottom: 20px; /*為列表項設置了底部內邊距，具體是 20 像素*/
   border-bottom: 1px solid #eee;
+  /*為列表項設置了底部邊框，具體是 1 像素寬的實線，顏色為 #eee（淺灰色）*/
   list-style: none;
+  /*是取消列表項的樣式符號，讓列表項只顯示文字內容，而不顯示默認的項目符號*/
 }
 
 #posts li:last-child {
@@ -35,12 +37,12 @@ textarea {
 
 input[type=text],
 textarea {
-  border: 1px solid #eee;
-  border-top-color: #ddd;
-  border-left-color: #ddd;
-  border-radius: 2px;
-  padding: 15px;
-  font-size: .8em;
+  border: 1px solid #eee;/*設置了一個 1 像素寬的實線邊框，顏色為 #eee（非常淺的灰色）*/
+  border-top-color: #ddd;/*將邊框的頂部顏色設置為 #ddd（淺灰色）。這會覆蓋之前設定的頂部邊框顏色 #eee*/
+  border-left-color: #ddd;/*將邊框的左側顏色設置為 #ddd（淺灰色）。這會覆蓋之前設定的左側邊框顏色 #eee*/
+  border-radius: 2px; /*將元素的邊角設置為 2 像素的圓角，使邊角變得更加圓滑*/
+  padding: 15px; /*設置元素的內邊距為 15 像素。這意味著元素內容與邊框之間有 15 像素的空間*/
+  font-size: .8em;/*設置元素的字體大小為 0.8 倍的 em 單位。em 是一個相對單位，基於父元素的字體大小。0.8em 通常表示比父元素字體大小略小的字體*/
 }
 
 input[type=text] {

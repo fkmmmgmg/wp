@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 隱藏視頻超出部分 */
+}
+
+.Navbar {
+    backdrop-filter: blur(300px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.navbar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: right;
+}
+
+.navbar-list li {
+    margin: 0 10px; /* 調整圖片之間的間距 */
+}
+
+.navbar-list li img {
+    width: 50px; /* 調整圖片大小 */
+    height: auto;
+}
+
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    background-size: cover;
+    transition: 1s opacity;
+}
+
+#video-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    font-size: 5em;
+    margin-top: 10%;
+}
