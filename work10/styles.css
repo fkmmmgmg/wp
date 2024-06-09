@@ -1,15 +1,24 @@
 body {
     font-family: Arial, sans-serif;
+    /* 設置字體系列，首選 Arial，如果不可用，則使用 sans-serif 字體 */
     background-color: #f4f4f9;
+    /* 設置背景顏色為 #f4f4f9，這是一種淡灰色 */
     color: #333;
     margin: 0;
+    /* 設置外邊距為 0，這樣可以確保元素沒有預設的外邊距 */
     padding: 0;
+    /* 設置內邊距為 0，這樣可以確保元素沒有預設的內邊距 */
     display: flex;
+    /* 設置顯示方式為 flex，以便使用 Flexbox 布局模型 */
     flex-direction: column;
     height: 100vh;
+    /* 設置元素的高度為視口高度的 100%，這樣可以使其充滿整個視口高度 */
     width: 95%;
+    /* 設置元素的寬度為視口寬度的 95%，這樣可以使其幾乎充滿視口的寬度，但留有少許間隙 */
     display: block;
+    /* 再次設置顯示方式為 block，使元素成為塊級元素 */
     margin:10px auto;
+    /* 設置外邊距為 10px，自動調整左右邊距使元素水平居中 */
 }
 
 h1 {
@@ -58,11 +67,19 @@ h2 {
 
 #outputText {
     margin-top: 10px;
+     /* 設置元素頂部的外邊距為 10px，與周圍元素保持一定距離 */
     padding: 10px;
+     /* 設置元素的內邊距為 10px，確保內容與邊框保持一定距離 */
     border: 1px solid #ccc;
+     /* 設置元素邊框為 1px 寬的實線，顏色為 #ccc（淺灰色） */
     border-radius: 4px;
+     /* 設置元素的邊框圓角為 4px，使邊角變得圓滑 */
     background-color: #fff;
+     /* 設置背景顏色為 #fff（白色） */
     width: 80%;
+    /* 設置元素的寬度為其父容器寬度的 80% */
     min-height: 50px;
+    /* 設置元素的最小高度為 50px，確保其至少有這麼高 */
     margin: 10px 0;
+     /* 設置元素上下的外邊距為 10px，左右的外邊距為 0 */
 }

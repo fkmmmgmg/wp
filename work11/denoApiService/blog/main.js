@@ -1,7 +1,8 @@
-import {sqlFetch} from '../lib/sql.js'
+/*單頁應用程式*/
+import {sqlFetch} from '../lib/sql.js'/*導入sqlFetch(路徑位置sql.js)*/
 
-export var R = {}
-let _id=0, _title=1, _body=2
+export var R = {}/*全域對象R宣告，用於用於存儲一些可重複使用的函式或數據*/
+let _id=0, _title=1, _body=2/*其他變數宣告*/
 
 window.onhashchange = async function () {
   var r
