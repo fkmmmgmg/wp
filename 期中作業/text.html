@@ -5,36 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個人網站</title>
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
             overflow: hidden; /* 隱藏視頻超出部分 */
         }
-        
+
+        .loader-container {
+            position: absolute;
+            z-index: 2000; /* 確保加載動畫在最上層 */
+        }
+
+        .loader {
+            display: flex;
+            font-size: 2rem;
+            color: white;
+            position: relative;
+        }
+
+        .loader span {
+            animation: blur 4s infinite;
+            margin: 0.7rem;
+        }
+
+        @keyframes blur {
+            0% {
+                filter: blur(0);
+            }
+            25% {
+                filter: blur(1px);
+            }
+            50% {
+                filter: blur(5px);
+            }
+            75% {
+                filter: blur(1px);
+            }
+            100% {
+                filter: blur(0);
+            }
+        }
+
+        .loader span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .loader span:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .loader span:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        .loader span:nth-child(4) {
+            animation-delay: 1s;
+        }
+
+        .loader span:nth-child(5) {
+            animation-delay: 1.4s;
+        }
+
+        .loader span:nth-child(6) {
+            animation-delay: 1.8s;
+        }
+
         .Navbar {
-    	backdrop-filter: blur(500px);
-<<<<<<< HEAD
-    	box-shadow: 0px 0px 30px rgba(42, 42, 44, 0.8);
-=======
-    	box-shadow: 0px 0px 30px rgba(227, 228, 237,0.8);
->>>>>>> b8f63cf91d376f20939c903b88ccb7e831cca25d
-    	border: 1px solid rgba(255, 255, 255, 0.8);
-        position: fixed; /* 固定位置 */
-        top: 0; /* 距離頂部位置 */
-        left: 0; /* 距離左側位置 */
-        width: 100%;
-        height: 100px; /* 初始高度 */
-        transform: translateY(-100px); /* 將側欄移出視窗 */
-        transition: transform 0.3s ease; /* 過渡效果 */
-        z-index: 1000; /* 確保在視頻上方 */
-        background-color: rgba(62, 62, 62, 0.8); /* 背景色 */
-        padding: 20px; /* 內邊距 */
+            backdrop-filter: blur(500px);
+            box-shadow: 0px 0px 30px rgba(42, 42, 44, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            position: fixed; /* 固定位置 */
+            top: 0; /* 距離頂部位置 */
+            left: 0; /* 距離左側位置 */
+            width: 100%;
+            height: 100px; /* 初始高度 */
+            transform: translateY(-100px); /* 將側欄移出視窗 */
+            transition: transform 0.3s ease; /* 過渡效果 */
+            z-index: 1000; /* 確保在視頻上方 */
+            background-color: rgba(62, 62, 62, 0.8); /* 背景色 */
+            padding: 20px; /* 內邊距 */
         }
 
         body:hover .Navbar {
             transform: translateY(0); /* 滑鼠移動到 body 時顯示側欄 */
         }
-
 
         .navbar-list {
             list-style-type: none;
@@ -47,7 +106,6 @@
         .navbar-list li {
             margin: 0 10px; /* 調整圖片之間的間距 */
             text-align: center; /* 文字置中 */
-<<<<<<< HEAD
         }
 
         .navbar-list li img {
@@ -56,7 +114,7 @@
         }
 
         .navbar img:hover {
-        filter: drop-shadow(1px 1px 20px white)
+            filter: drop-shadow(1px 1px 20px white);
         }
 
         .navbar-list li p {
@@ -65,22 +123,11 @@
             color: black; /* 文字顏色 */
         }
 
-=======
-}
-
-        .navbar-list li img {
-            width: 40px; /* 調整圖片大小 */
-            height: auto;
-
-}
->>>>>>> b8f63cf91d376f20939c903b88ccb7e831cca25d
-
-        .navbar-list li p {
-            margin: 5px 0 0; /* 調整文字與圖片的距離 */
-            font-size: 14px; /* 調整文字大小 */
-            color: black; /* 文字顏色 */
-}
-
+        .navbar-list li.active img,
+        .navbar-list li.active p {
+            filter: drop-shadow(1px 1px 20px yellow);
+            color: yellow;
+        }
 
         #video-background {
             position: fixed;
@@ -107,37 +154,59 @@
 </head>
 <body>
 
- <div class="Navbar">
-        <!-- 在這裡添加您的導航欄內容 -->
+    <div class="loader-container">
+        <div class="loader">
+            <span>M</span>
+            <span>A</span>
+            <span>T</span>
+            <span>E</span>
+            <span>R</span>
+            <span>I</span>
+            <span>A</span>
+            <span>L</span>
+        </div>
+    </div>
+
+    <div class="Navbar">
         <nav>
-            <ul>
-                <ul class="navbar-list">
-                <li><img src="https://github.com/fkmmmgmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/HOME.png?raw=true" alt="Home">
-                     <p>Home</p>
+            <ul class="navbar-list">
+                <li><img src="https://github.com/fkmmmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/HOME.png?raw=true" alt="Home">
+                    <p>Home</p>
                 </li>
-                <li><img src="https://github.com/fkmmmgmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/DOG.png?raw=true" alt="Animal">
+                <li><img src="https://github.com/fkmmmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/DOG.png?raw=true" alt="Animal">
                     <p>Animal</p>
                 </li>
-                <li><img src="https://github.com/fkmmmgmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/TREE.png?raw=true" alt="Plant">
+                <li><img src="https://github.com/fkmmmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/TREE.png?raw=true" alt="Plant">
                     <p>Plant</p>
                 </li>
-                <li><img src="https://github.com/fkmmmgmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/PI.png?raw=true" alt="Pavement">
+                <li><img src="https://github.com/fkmmmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/PI.png?raw=true" alt="Pavement">
                     <p>Pavement</p>
                 </li>
             </ul>
         </nav>
     </div>
 
-
     <video autoplay loop muted id="video-background">
         <source src="https://videos.pexels.com/video-files/3866539/3866539-hd_1280_720_25fps.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
     <div id="video-content">
         <h1>material</h1>
     </div>
 
-    
+    <script>
+        document.querySelectorAll('.navbar-list li').forEach(item => {
+            item.addEventListener('click', () => {
+                // 移除所有項目的active類
+                document.querySelectorAll('.navbar-list li').forEach(li => {
+                    li.classList.remove('active');
+                });
+                // 為當前點擊項添加active類
+                item.classList.add('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
