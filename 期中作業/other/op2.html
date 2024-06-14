@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動畫示例</title>
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0 auto;
+            background-color: #0f172a;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .op {
+            display: flex;
+            font-size: 2rem;
+            color: white;
+            position: relative;
+        }
+
+        .op:last-of-type {
+            margin-left: -360px;
+            animation: slidein 7s infinite;
+        }
+
+        @keyframes slidein {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            20% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            80% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="op-container">
+        <div class="op">First Element</div>
+        <div class="op">Second Element</div>
+        <div class="op">Third Element</div>
+        <div class="op">Animated Element</div>
+    </div>
+</body>
+</html>
