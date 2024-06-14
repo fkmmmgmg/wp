@@ -31,6 +31,7 @@
         .loader span {
             animation: blur 4s infinite;
             margin: 0.7rem;
+            font-size: 50px;
         }
 
         @keyframes blur {
@@ -77,22 +78,19 @@
 
         .Navbar {
             backdrop-filter: blur(500px);
-            box-shadow: 0px 0px 30px rgba(42, 42, 44, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.8);
             position: fixed; /* 固定位置 */
             top: 0; /* 距離頂部位置 */
             left: 0; /* 距離左側位置 */
             width: 100%;
-            height: 100px; /* 初始高度 */
-            transform: translateY(-100px); /* 將側欄移出視窗 */
-            transition: transform 0.3s ease; /* 過渡效果 */
+            height: 50px; /* 初始高度 */
+            transition: height 0.5s ; /* 過渡效果 */
             z-index: 1000; /* 確保在視頻上方 */
-            background-color: rgba(62, 62, 62, 0.8); /* 背景色 */
+            background: linear-gradient(to bottom, rgba(63, 63, 63, 0.8), rgba(63, 63, 63, 0)); /* 漸層背景色 */
             padding: 20px; /* 內邊距 */
         }
 
-        body:hover .Navbar {
-            transform: translateY(0); /* 滑鼠移動到 body 時顯示側欄 */
+        .Navbar:hover {
+            height: 100%; /* 滑動效果 */
         }
 
         .navbar-list {
@@ -101,6 +99,7 @@
             margin: 0;
             display: flex;
             justify-content: right;
+            padding-right: 20px;
         }
 
         .navbar-list li {
@@ -109,24 +108,20 @@
         }
 
         .navbar-list li img {
-            width: 30px; /* 調整圖片大小 */
+            width: 35px; /* 調整圖片大小 */
             height: auto;
-        }
-
-        .navbar img:hover {
             filter: drop-shadow(1px 1px 20px white);
         }
 
         .navbar-list li p {
             margin: 5px 0 0; /* 調整文字與圖片的距離 */
             font-size: 14px; /* 調整文字大小 */
-            color: black; /* 文字顏色 */
+            color: white; /* 文字顏色 */
         }
 
         .navbar-list li.active img,
         .navbar-list li.active p {
             filter: drop-shadow(1px 1px 20px yellow);
-            color: yellow;
         }
 
         #video-background {
@@ -150,9 +145,51 @@
             font-size: 5em;
             margin-top: 10%;
         }
+
+        a{
+            color: white;
+            text-decoration:none;
+        }
+
+        .op {
+            display: flex;
+            font-size: 2rem;
+            color: white;
+            position: relative;
+        }
+        .op:last-of-type{
+            margin-left:-360px ;
+            animation: slidein 7s infinite;
+        }
+        @keyframes showup{
+            0%{opacity: 0;}
+            20%{opacity: 1;}
+            80%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+
     </style>
 </head>
 <body>
+
+    <div class="Navbar">
+        <nav>
+            <ul class="navbar-list">
+                <li><img src="https://github.com/fkmmmgmg/wp/blob/cba3bca15b40bed85b6bca811f02f7ccccb74e0f/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/HOME.png?raw=true" alt="Home">
+                    <p><a href="https://fkmmmgmg.github.io/wp/work1/%E8%87%AA%E6%88%91%E4%BB%8B%E7%B4%B9.html">Home</p>
+                </li>
+                <li><img src="https://github.com/fkmmmgmg/wp/blob/cba3bca15b40bed85b6bca811f02f7ccccb74e0f/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/DOG.png?raw=true" alt="Animal">
+                    <p><a href="https://fkmmmgmg.github.io/wp/work1/%E8%87%AA%E6%88%91%E4%BB%8B%E7%B4%B9.html"></a>Animal</p>
+                </li>
+                <li><img src="https://github.com/fkmmmgmg/wp/blob/cba3bca15b40bed85b6bca811f02f7ccccb74e0f/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/TREE.png?raw=true" alt="Plant">
+                    <p><a href="https://fkmmmgmg.github.io/wp/work1/%E8%87%AA%E6%88%91%E4%BB%8B%E7%B4%B9.html"></a>Plant</p>
+                </li>
+                <li><img src="https://github.com/fkmmmgmg/wp/blob/cba3bca15b40bed85b6bca811f02f7ccccb74e0f/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/PI.png?raw=true" alt="Pavement">
+                    <p><a href="https://fkmmmgmg.github.io/wp/work1/%E8%87%AA%E6%88%91%E4%BB%8B%E7%B4%B9.html"></a>Pavement</p>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
     <div class="loader-container">
         <div class="loader">
@@ -167,33 +204,12 @@
         </div>
     </div>
 
-    <div class="Navbar">
-        <nav>
-            <ul class="navbar-list">
-                <li><img src="https://github.com/fkmmmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/HOME.png" alt="Home">
-                    <p>Home</p>
-                </li>
-                <li><img src="https://github.com/fkmmmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/DOG.png" alt="Animal">
-                    <p>Animal</p>
-                </li>
-                <li><img src="https://github.com/fkmmmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/TREE.png" alt="Plant">
-                    <p>Plant</p>
-                </li>
-                <li><img src="https://github.com/fkmmmg/wp/blob/master/%E6%9C%9F%E4%B8%AD%E4%BD%9C%E6%A5%AD/PI.png" alt="Pavement">
-                    <p>Pavement</p>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
     <video autoplay loop muted id="video-background">
         <source src="https://videos.pexels.com/video-files/3866539/3866539-hd_1280_720_25fps.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <div id="video-content">
-        <h1>material</h1>
-    </div>
+   
 
     <script>
         document.querySelectorAll('.navbar-list li').forEach(item => {
